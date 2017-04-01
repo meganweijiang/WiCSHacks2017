@@ -1,6 +1,6 @@
 import json
 from watson_developer_cloud import ToneAnalyzerV3
-from gettweets import *
+from app.gettweets import *
 
 toneList = []
 
@@ -38,9 +38,3 @@ def getAvg(toneList):
 	averages['sadness'] = float(sadnessTotal / length)
 
 	return averages
-
-api_inst = getInst()
-getData(api_inst)
-getTones(jsonList)
-
-print (getAvg(toneList))
