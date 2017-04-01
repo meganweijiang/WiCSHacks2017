@@ -27,5 +27,4 @@ def getData(api_inst):
         break
       else:
         store(item.text)
-        print ("found a " + twitter_query + " tweet")
         counter += 1
