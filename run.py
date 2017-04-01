@@ -21,5 +21,9 @@ def search():
 	vals = getAvg(toneList)
 	return render_template('search.html', data=json.dumps(vals))
 
+@app.route('/about', methods=['GET'])
+def about():
+	return render_template('about.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

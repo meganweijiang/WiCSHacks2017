@@ -70,6 +70,17 @@
                 font-family: 'Alegreya Sans SC', sans-serif;
             }
 
+            #about {
+                opacity: 30%;
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+                background-color: rgba(255, 255, 255, 0.5);
+                border-radius: 90px;
+                position: absolute;
+                left: 10px;
+                bottom: 10px;
+            }
+
 
         </style>
     </head>
@@ -166,10 +177,13 @@
         </section>
 
         <section id="about-us">
-            <div class="about-us bg-inverse">
+            <div class="about-us">
                 <div class="container-fluid" role="contentinfo">
                     <div class="row">
-                        <div class="col-"
+
+                        <form method="GET" action="/about">
+                                <button class="btn btn-default" id="about" type="submit">About</button>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{ name }}</title>
+
+        <!-- Custom CSS <link href="css/main.css" rel="stylesheet"> -->
+
+        <!-- Bootstrap Material Design (bundled with Bootstrap CSS) -->
+        <link rel="stylesheet" href="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.min.css">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,100i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i" rel="stylesheet">
+
+        <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+        <script src="{{ url_for('static', filename='js/liquidFillGauge.js') }}" language="JavaScript"></script>
+
+        <style type="text/css">
+            body, html {
+                width: 100%;
+                height: 100%;
+                background: url(../static/img/twitter.jpg) no-repeat center center;
+                background-size: cover;
+
+            }
+
+            #return {
+                opacity: 30%;
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+                background-color: rgba(255, 255, 255, 0.5);
+                border-radius: 90px;
+            }
+
+            ::-webkit-input-placeholder { /* For WebKit browsers */
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+            }
+
+            :-moz-placeholder { /* For Mozilla Firefox 4 to 18 */
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+            }
+
+            ::-moz-placeholder { /* For Mozilla Firefox 19+ */
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+            }
+
+            :-ms-input-placeholder { /* For Internet Explorer 10+ */
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+            }
+
+            .col-md-12 {
+                text-align: center;
+            }
+
+            p {
+                display: inline;
+                position: relative;
+                font-family: 'Lato', sans-serif;
+                color: white;
+
+            }
+
+            .liquidFillGaugeText {
+                font-family: 'Alegreya Sans SC', sans-serif;
+            }
+
+            #about {
+                opacity: 30%;
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+                background-color: rgba(255, 255, 255, 0.5);
+                border-radius: 90px;
+                position: absolute;
+                left: 10px;
+                bottom: 10px;
+            }
+
+            h3 {
+                padding: 100px;
+                font-family: 'Alegreya Sans SC', sans-serif;
+                color: white;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <section id="landing-page">
+            <div class="welcome-banner bg-light">
+                <div class="container-fluid" role="banner">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>This page was created using the Twitter API and the IBM Watson Tone Analyzer API for the Women in Computer Science 2017 Hackathon at the University of Texas at Austin</h3>
+                            <p>Created by:</p>
+                            <br>
+                            <br>
+                            <a href="http//:github.com/meganweijiang"><p>Megan Weijiang</p></a>
+                            <br>
+                            <a href="http//:github.com/tiffanytso"><p>Tiffany Tso</p></a>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+                            <form method="GET" action="/">
+                                <button class="btn btn-default" id="return" type="submit">Return</button>
+                            </form>
+                        </div>
+                    </div>
+                </div> <!-- ./container-fluid -->
+            </div> <!-- ./banner -->
+        </section>
+
+    </body>
+
+</html>
