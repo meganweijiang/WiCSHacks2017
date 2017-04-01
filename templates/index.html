@@ -1,18 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-<head>
-    <meta charset="UTF-8">
-    <title>{{ name }}</title>
-</head>
-<body>
-    <h1>Hello there</h1>
-    <form method="GET" action="/search">
-    	<input type="text" class="form-control" name="search_query" placeholder="How does Twitter feel about...?">
-    	<button class="btn btn-default" type="submit">Search</button>
-    </form>
-</body>
-=======
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -81,23 +68,33 @@
                             <div class="welcome-message">
                                 <h1>How does Twitter feel about...?</h1>
                             </div> <!-- ./welcome-message -->
-
+                            <form method="GET" action="/search">
                             <div class="search-bar">
                                 <div class="container-fluid">
                                     <div class="input-group" role="search">
-                                        <input id="search" type="text" class="form-control" placeholder="How does Twitter feel about...?">
+                                        <input id="search" type="text" name="search_query" class="form-control" placeholder="enter search term here">
                                         <span class="input-group-btn">
                                             <input class="btn btn-default" type="button" value="Search">Search</input>
                                         </span>
                                     </div> <!-- ./input-group -->
                                 </div> <!-- ./container-fluid -->
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div> <!-- ./container-fluid -->
             </div> <!-- ./banner -->
         </section>
+
+        <section id="about-us">
+            <div class="about-us bg-inverse">
+                <div class="container-fluid" role="contentinfo">
+                    <div class="row">
+                        <div class="col-"
+                    </div>
+                </div>
+            </div>
+        </section>
     </body>
 
->>>>>>> 5a1ef2a93ee77426654de6bddf8171f4e216ac1a
 </html>
