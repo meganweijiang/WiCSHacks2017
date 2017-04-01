@@ -13,17 +13,18 @@ def hello_world():
 
 @app.route('/search', methods=['GET'])
 def search():
-	name = "WiCS Hacks 2017"
+	name = "Results"
 	twitter_query = request.args.get('search_query')
 	api_inst = getInst()
 	getData(api_inst, twitter_query)
 	getTones(jsonList)
 	vals = getAvg(toneList)
-	return render_template('search.html', data=json.dumps(vals))
+	return render_template('search.html', data=json.dumps(vals), name=name)
 
 @app.route('/about', methods=['GET'])
 def about():
-	return render_template('about.html')
+	name = "About"
+	return render_template('about.html', name=name)
 
 if __name__ == "__main__":
     app.run(debug=True)
