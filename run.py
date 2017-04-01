@@ -19,12 +19,7 @@ def search():
 	getData(api_inst, twitter_query)
 	getTones(jsonList)
 	vals = getAvg(toneList)
-	anger = vals['anger']
-	disgust = vals['disgust']
-	fear = vals['fear']
-	joy = vals['joy']
-	sadness = vals['sadness']
-	return render_template('search.html', name=name, anger=anger, disgust=disgust, fear=fear, joy=joy, sadness=sadness)
+	return render_template('search.html', data=json.dumps(vals))
 
 if __name__ == "__main__":
     app.run(debug=True)

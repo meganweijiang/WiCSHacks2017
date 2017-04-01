@@ -15,6 +15,9 @@
         <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,100i" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato:300,300i" rel="stylesheet">
 
+        <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+        <script src="{{ url_for('static', filename='js/liquidFillGauge.js') }}" language="JavaScript"></script>
+
         <style type="text/css">
             body, html {
                 width: 100%;
@@ -23,14 +26,7 @@
                 background-size: cover;
             }
 
-            .welcome-message {
-                text-align: center;
-                padding: 150px;
-                font-family: 'Alegreya Sans SC', sans-serif;
-                font-weight: 100;
-            }
-
-            .search-bar {
+            #return {
                 opacity: 30%;
                 font-family: 'Lato', sans-serif;
                 font-weight: 300;
@@ -56,6 +52,20 @@
                 font-family: 'Lato', sans-serif;
                 font-weight: 300;
             }
+
+            .col-md-12 {
+                text-align: center;
+            }
+
+            p {
+                display: inline;
+                position: relative;
+                font-family: 'Lato', sans-serif;
+                color: white;
+                padding: 55px;
+            }
+
+
         </style>
     </head>
 
@@ -65,14 +75,87 @@
                 <div class="container-fluid" role="banner">
                     <div class="row">
                         <div class="col-md-12">
-                            <p>Anger: {{ anger }}</p>
-                            <p>Disgust: {{ disgust }}</p>
-                            <p>Fear: {{ fear }}</p>
-                            <p>Joy: {{ joy }}</p>
-                            <p>Sadness: {{ sadness }}</p>
+
                             <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+                            <p>Anger</p>
+                            <p>Disgust</p>
+                            <p>Fear</p>
+                            <p>Joy</p>
+                            <p>Sadness</p>
+
+                            <br>
+                            <svg class="gauge" id="fillgauge1" width="150px" height="150px"></svg>
+                            <svg class="gauge" id="fillgauge2" width="150px" height="150px"></svg>
+                            <svg class="gauge" id="fillgauge3" width="150px" height="150px"></svg>  
+                            <svg class="gauge" id="fillgauge4" width="150px" height="150px"></svg>     
+                            <svg class="gauge" id="fillgauge5" width="150px" height="150px"></svg>
+
+                            <script language="JavaScript">
+                                var dataDict = {{ data|safe }};
+                                var total = dataDict.anger + dataDict.disgust + dataDict.fear + dataDict.joy + dataDict.sadness;
+
+                                var anger = (dataDict.anger / total) * 100;
+                                var disgust = (dataDict.disgust / total) * 100;
+                                var fear = (dataDict.fear / total) * 100;
+                                var joy = (dataDict.joy / total) * 100;
+                                var sadness = (dataDict.sadness / total) * 100;
+                                 
+                                var config1 = liquidFillGaugeDefaultSettings();
+                                config1.circleColor = "#960c0c"
+                                config1.textColor = "#FFFFFF";
+                                config1.waveTextColor = "#FFFFFF";
+                                config1.waveColor = "#960c0c";
+
+                                var config2 = liquidFillGaugeDefaultSettings();
+                                config2.circleColor = "#590ba3"
+                                config2.textColor = "#FFFFFF";
+                                config2.waveTextColor = "#FFFFFF";
+                                config2.waveColor = "#590ba3";
+
+                                var config3 = liquidFillGaugeDefaultSettings();
+                                config3.circleColor = "#20b554"
+                                config3.textColor = "#FFFFFF";
+                                config3.waveTextColor = "#FFFFFF";
+                                config3.waveColor = "#20b554";
+
+                                var config4 = liquidFillGaugeDefaultSettings();
+                                config4.circleColor = "#e8c82c"
+                                config4.textColor = "#FFFFFF";
+                                config4.waveTextColor = "#FFFFFF";
+                                config4.waveColor = "#e8c82c";
+
+                                var config5 = liquidFillGaugeDefaultSettings();
+                                config5.circleColor = "#1071b7"
+                                config5.textColor = "#FFFFFF";
+                                config5.waveTextColor = "#FFFFFF";
+                                config5.waveColor = "#1071b7";
+
+                                var gauge1 = loadLiquidFillGauge("fillgauge1", anger, config1);
+                                var gauge2 = loadLiquidFillGauge("fillgauge2", disgust, config2);
+                                var gauge3 = loadLiquidFillGauge("fillgauge3", fear, config3);
+                                var gauge4 = loadLiquidFillGauge("fillgauge4", joy, config4);
+                                var gauge5 = loadLiquidFillGauge("fillgauge5", sadness, config5);
+                            </script>
+
+
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
                             <form method="GET" action="/">
-                                <button class="btn btn-default" type="submit">Return</button>
+                                <button class="btn btn-default" id="return" type="submit">Return</button>
                             </form>
                         </div>
                     </div>
