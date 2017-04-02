@@ -1,4 +1,5 @@
 import json
+import re
 from watson_developer_cloud import ToneAnalyzerV3
 from app.gettweets import *
 
@@ -10,7 +11,9 @@ tone_analyzer = ToneAnalyzerV3(
 def getTones(jsonList):
 	toneList = []
 	for item in jsonList:
-		toneList.append(tone_analyzer.tone(text=item)['document_tone']['tone_categories'][0]['tones'])
+		clean_tweet = re.sub(r"(?:\@|https?\://)\S+", "", item)
+		clean_tweet = re.sub("RT", "", clean_tweet)
+		toneList.append(tone_analyzer.tone(text=clean_tweet)['document_tone']['tone_categories'][0]['tones'])
 	return toneList
 
 def getAvg(toneList):
