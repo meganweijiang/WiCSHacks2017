@@ -23,15 +23,19 @@ def getInst():
 def getData(api_inst, twitter_query):
 	jsonList = []
 	counter = 0
-	twitter_cursor = tweepy.Cursor(api_inst.search, q=twitter_query, lang="en")
-	for page in twitter_cursor.pages():
-		if counter == 50:
-			break
-		for item in page:
+	try:
+		twitter_cursor = tweepy.Cursor(api_inst.search, q=twitter_query, lang="en")
+		for page in twitter_cursor.pages():
 			if counter == 50:
 				break
-			else:
-				store(item.text, jsonList)
-				counter += 1
-				print("Found a tweet")
+			for item in page:
+				if counter == 50:
+					break
+				else:
+					store(item.text, jsonList)
+					counter += 1
+					print("Found a tweet")
+	except tweepy.error.TweepError as err:
+		print (err)
+
 	return jsonList

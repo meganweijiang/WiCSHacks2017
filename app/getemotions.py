@@ -16,7 +16,7 @@ def getTones(jsonList):
 def getAvg(toneList):
 	length = len(toneList)
 
-	averages = {'anger': None, 'disgust': None, 'fear': None, 'joy': None, 'sadness': None}
+	averages = {'anger': 0.0, 'disgust': 0.0, 'fear': 0.0, 'joy': 0.0, 'sadness': 0.0}
 
 	angerTotal = 0.0
 	disgustTotal = 0.0
@@ -31,10 +31,13 @@ def getAvg(toneList):
 		joyTotal += float(item[3]['score'])
 		sadnessTotal += float(item[4]['score'])
 
-	averages['anger'] = float(angerTotal / length)
-	averages['disgust'] = float(disgustTotal / length)
-	averages['fear'] = float(fearTotal / length)
-	averages['joy'] = float(joyTotal / length)
-	averages['sadness'] = float(sadnessTotal / length)
+	try:
+		averages['anger'] = float(angerTotal / length)
+		averages['disgust'] = float(disgustTotal / length)
+		averages['fear'] = float(fearTotal / length)
+		averages['joy'] = float(joyTotal / length)
+		averages['sadness'] = float(sadnessTotal / length)
+	except ZeroDivisionError as err:
+		print (err)
 
 	return averages
