@@ -1,4 +1,6 @@
 *.pyc
 
+WiCSHacks2017.iml
+
 /flask
 /venv
