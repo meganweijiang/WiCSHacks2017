@@ -11,9 +11,7 @@ API_SECRET = 'JdfdIVeSNLFuazbzSZeKAofdy7s5IzLVpI25RgjOzOuOreONtT'
 TOKEN_KEY = '3243742999-ItaCs47Neu3ve4dTJpcsVz4xvYuJxBSYbrzTRa0'
 TOKEN_SECRET = 'mArLXKMpbWArgRRI8UQqYrbJWbZyQxTXmgaMeh9J19CEm'
 
-jsonList = []
-
-def store(tweet):
+def store(tweet, jsonList):
 	jsonList.append(json.dumps(tweet))
 
 def getInst():
@@ -23,6 +21,7 @@ def getInst():
 	return api_inst
 
 def getData(api_inst, twitter_query):
+	jsonList = []
 	counter = 0
 	twitter_cursor = tweepy.Cursor(api_inst.search, q=twitter_query, lang="en")
 	for page in twitter_cursor.pages():
@@ -32,7 +31,7 @@ def getData(api_inst, twitter_query):
 			if counter == 50:
 				break
 			else:
-				store(item.text)
+				store(item.text, jsonList)
 				counter += 1
 				print("Found a tweet")
-	return
+	return jsonList

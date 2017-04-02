@@ -16,8 +16,8 @@ def search():
 	name = "Results"
 	twitter_query = request.args.get('search_query')
 	api_inst = getInst()
-	getData(api_inst, twitter_query)
-	getTones(jsonList)
+	jsonList = getData(api_inst, twitter_query)
+	toneList = getTones(jsonList)
 	vals = getAvg(toneList)
 	return render_template('search.html', data=json.dumps(vals), name=name)
 
