@@ -7,8 +7,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    author = "Megan and Tiffany"
-    name = "WiCS Hacks 2017"
+    author = "Megan Weijiang & Tiffany Tso"
+    name = "TwitterMood"
     return render_template('index.html', author=author, name=name)
 
 @app.route('/search', methods=['GET'])

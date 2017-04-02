@@ -6,7 +6,8 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>{{ name }}</title>
 
-        <!-- Custom CSS <link href="css/main.css" rel="stylesheet"> -->
+        <!-- FontAwesome (icons) -->
+        <script src="https://use.fontawesome.com/fbad914232.js"></script>
 
         <!-- Bootstrap Material Design (bundled with Bootstrap CSS) -->
         <link rel="stylesheet" href="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.min.css">
@@ -24,7 +25,6 @@
                 height: 100%;
                 background: url(../static/img/twitter.jpg) no-repeat center center;
                 background-size: cover;
-
             }
 
             #return {
@@ -55,71 +55,110 @@
                 font-weight: 300;
             }
 
-            .col-md-12 {
+            p {
+                font-family: 'Lato', sans-serif;
+            }
+
+            .container {
+                padding-top: 100px;
+                text-align: center;
+                align-items: center;
+            }
+
+            .container-fluid > h1 {
+                padding: 50px;
+                font-family: 'Alegreya Sans SC', sans-serif;
+                text-align: center;
+                color: #FFFFFF;
+            }
+
+            h1 {
+                padding: 30px;
+                font-family: 'Alegreya Sans SC', sans-serif;
                 text-align: center;
             }
 
-            p {
-                display: inline;
-                position: relative;
-                font-family: 'Lato', sans-serif;
-                color: white;
-
-            }
-
-            .liquidFillGaugeText {
-                font-family: 'Alegreya Sans SC', sans-serif;
-            }
-
-            #about {
-                opacity: 30%;
-                font-family: 'Lato', sans-serif;
-                font-weight: 300;
-                background-color: rgba(255, 255, 255, 0.5);
-                border-radius: 90px;
-                position: absolute;
-                left: 10px;
-                bottom: 10px;
-            }
-
             h3 {
-                padding: 100px;
+                padding: 10px;
                 font-family: 'Alegreya Sans SC', sans-serif;
-                color: white;
+                text-align: center;
             }
 
+            .row {
+                text-align: center;
+                align-items: center;
+                height: 110px;
+            }
 
+            .col-6 {
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 20px;
+                color: #FFFFFF;
+            }
+
+            .about {
+                padding-top: 100px;
+                font-family: 'Alegreya Sans SC', sans-serif;
+                text-align: center;
+                color: #000000;
+            }
         </style>
     </head>
 
     <body>
         <section id="landing-page">
             <div class="welcome-banner bg-light">
-                <div class="container-fluid" role="banner">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3>This page was created using the Twitter API and the IBM Watson Tone Analyzer API for the Women in Computer Science 2017 Hackathon at the University of Texas at Austin</h3>
-                            <p>Created by:</p>
-                            <br>
-                            <br>
-                            <a href="http//:github.com/meganweijiang"><p>Megan Weijiang</p></a>
-                            <br>
-                            <a href="http//:github.com/tiffanytso"><p>Tiffany Tso</p></a>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-
-                            <form method="GET" action="/">
-                                <button class="btn btn-default" id="return" type="submit">Return</button>
-                            </form>
-                        </div>
+                <div class="container-fluid">
+                    <h1>About TwitterMood</h1>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6 col-md-4">
+                                <h3>Twitter API</h3>
+                                <i class="fa fa-twitter fa-5x" aria-hidden="true"></i><br><br>
+                                <p>Retrieves tweets based on your search query</p><br>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <h3>IBM Watson API</h3>
+                                <i class="fa fa-lightbulb-o fa-5x" aria-hidden="true"></i><br><br>
+                                <p>Utilizes Tone Analyzer to determine emotions</p><br>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <h3>JavaScript & Python</h3>
+                                <i class="fa fa-code fa-5x" aria-hidden="true"></i><br><br>
+                                <p>Uses D3.js, SpinKit.js, and Flask</p><br>
+                            </div>
+                        </div><br><br><br><br><br><br><br><br>
+                        <form method="GET" action="/">
+                            <button class="btn btn-default" id="return" type="submit">Home</button>
+                        </form>
                     </div>
                 </div> <!-- ./container-fluid -->
             </div> <!-- ./banner -->
         </section>
 
+        <section id="about-us">
+            <div class="about bg-light">
+                <div class="container" role="contentinfo">
+                    <h1>About the Developers</h1>
+                    <p>We made this for WiCS Hacks 2017 at the University of Texas at Austin.</p>
+                    <br><br><br><br><br><br>
+                    <div class="row">
+                        <div class="col-4 col-md-6">
+                            <h4>Megan Weijiang</h4><br>
+                            <img src="https://avatars1.githubusercontent.com/u/22065521?v=3&s=460" width="150px" height="150px"><br><br>
+                            <a href="https://github.com/meganweijiang"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a><br><br>
+                        </div>
+                        <div class="col-4 col-md-6">
+                            <h4>Tiffany Tso</h4><br>
+                            <img src="https://avatars0.githubusercontent.com/u/21206604?v=3&s=460" width="150px" height="150px"><br><br>
+                            <a href="https://github.com/tiffanytso"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a><br><br>
+                        </div>
+                    </div>
+                    <br><br><br><br><br><br>
+                </div>
+            </div>
+        </section>
     </body>
-
 </html>
+

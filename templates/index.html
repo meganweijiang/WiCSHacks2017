@@ -34,7 +34,7 @@
                 padding-top: 190px;
                 text-align: center;
                 position: relative;
-                color: white;
+                color: #FFFFFF;
                 font-family: 'Alegreya Sans SC', sans-serif;
                 font-weight: 100;
             }
@@ -45,6 +45,17 @@
                 font-weight: 300;
                 background-color: rgba(255, 255, 255, 0.5);
                 border-radius: 90px;
+            }
+
+            #about {
+                opacity: 30%;
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+                background-color: rgba(255, 255, 255, 0.5);
+                border-radius: 90px;
+                position: absolute;
+                left: 10px;
+                bottom: 10px;
             }
         </style>
 
@@ -146,7 +157,7 @@
             <div class="welcome-banner">
                 <div class="container-fluid" role="banner">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-lg-12">
                             <div class="welcome-message">
                                 <h1>How does Twitter feel about...?</h1>
                             </div> <!-- ./welcome-message -->
@@ -176,6 +187,18 @@
                     </div>
                 </div> <!-- ./container-fluid -->
             </div> <!-- ./welcome-banner -->
+        </section>
+
+        <section id="about-us">
+            <div class="about-us">
+                <div class="container-fluid" role="contentinfo">
+                    <div class="row">
+                        <form method="GET" action="/about">
+                            <button class="btn btn-default" id="about" type="submit">About</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <script>

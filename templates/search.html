@@ -26,6 +26,10 @@
                 background-size: cover;
             }
 
+            .results {
+                padding-top: 190px;
+            }
+
             #return {
                 opacity: 30%;
                 font-family: 'Lato', sans-serif;
@@ -54,8 +58,20 @@
                 font-weight: 300;
             }
 
-            .col-md-12 {
+            .col-lg-12, row {
                 text-align: center;
+                align-items: center;
+                width: 100%;
+            }
+
+            .col-xs-2 {
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 20px;
+            }
+
+            .col-half-offset{
+                margin-left:4.166666667%
             }
 
             p {
@@ -87,34 +103,36 @@
 
     <body>
         <section id="landing-page">
-            <div class="welcome-banner bg-light">
-                <div class="container-fluid" role="banner">
+            <div class="results bg-light">
+                <div class="container" role="banner">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    <p>Anger</p>
+                                    <svg class="gauge" id="fillgauge1" width="150px" height="150px"></svg>
+                                </div>
 
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
+                                <div class="col-xs-2 col-half-offset">
+                                    <p>Disgust</p>
+                                    <svg class="gauge" id="fillgauge2" width="150px" height="150px"></svg>
+                                </div>
 
-                            <p>Anger</p>
-                            <p>Disgust</p>
-                            <p>Fear</p>
-                            <p>Joy</p>
-                            <p>Sadness</p>
+                                <div class="col-xs-2 col-half-offset">
+                                    <p>Fear</p>
+                                    <svg class="gauge" id="fillgauge3" width="150px" height="150px"></svg>
+                                </div>
 
-                            <br>
-                            <svg class="gauge" id="fillgauge1" width="150px" height="150px"></svg>
-                            <svg class="gauge" id="fillgauge2" width="150px" height="150px"></svg>
-                            <svg class="gauge" id="fillgauge3" width="150px" height="150px"></svg>  
-                            <svg class="gauge" id="fillgauge4" width="150px" height="150px"></svg>     
-                            <svg class="gauge" id="fillgauge5" width="150px" height="150px"></svg>
+                                <div class="col-xs-2 col-half-offset">
+                                    <p>Joy</p>
+                                    <svg class="gauge" id="fillgauge4" width="150px" height="150px"></svg>
+                                </div>
+
+                                <div class="col-xs-2 col-half-offset">
+                                    <p>Sadness</p>
+                                    <svg class="gauge" id="fillgauge5" width="150px" height="150px"></svg>
+                                </div>
+                            </div>
 
                             <script language="JavaScript">
                                 var dataDict = {{ data|safe }};
@@ -162,11 +180,7 @@
                                 var gauge4 = loadLiquidFillGauge("fillgauge4", joy, config4);
                                 var gauge5 = loadLiquidFillGauge("fillgauge5", sadness, config5);
                             </script>
-
-                            <br>
-                            <br>
-                            <br>
-
+                            <br><br><br><br><br><br><br><br>
                             <form method="GET" action="/">
                                 <button class="btn btn-default" id="return" type="submit">Return</button>
                             </form>
@@ -180,7 +194,6 @@
             <div class="about-us">
                 <div class="container-fluid" role="contentinfo">
                     <div class="row">
-
                         <form method="GET" action="/about">
                                 <button class="btn btn-default" id="about" type="submit">About</button>
                         </form>
