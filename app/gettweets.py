@@ -26,10 +26,10 @@ def getData(api_inst, twitter_query):
 	try:
 		twitter_cursor = tweepy.Cursor(api_inst.search, q=twitter_query, lang="en")
 		for page in twitter_cursor.pages():
-			if counter == 70:
+			if counter == 50:
 				break
 			for item in page:
-				if counter == 70:
+				if counter == 50:
 					break
 				else:
 					store(item.text, jsonList)
