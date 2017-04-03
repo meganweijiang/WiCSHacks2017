@@ -12,7 +12,15 @@ def getTones(jsonList):
 	toneList = []
 	for item in jsonList:
 		clean_tweet = re.sub(r"(?:\@|https?\://)\S+", "", item)
-		clean_tweet = re.sub("RT", "", clean_tweet)
+		clean_tweet = re.sub(r"RT ", "", clean_tweet)	
+		clean_tweet = re.sub(r"\\n", "", clean_tweet)
+		try:
+    	# UCS-4
+			patt = re.compile(u'[\U00010000-\U0010ffff]')
+		except re.error:
+    	# UCS-2
+			patt = re.compile(u'[\uD800-\uDBFF][\uDC00-\uDFFF]')
+		clean_tweet = patt.sub("", clean_tweet)	
 		toneList.append(tone_analyzer.tone(text=clean_tweet)['document_tone']['tone_categories'][0]['tones'])
 	return toneList
 
