@@ -24,6 +24,7 @@
                 height: 100%;
                 background: url(../static/img/twitter.jpg) no-repeat center center;
                 background-size: cover;
+
             }
 
             .results {
@@ -97,6 +98,11 @@
                 bottom: 10px;
             }
 
+            .gauge {
+                width: 85%;
+                height: 85%;
+            }
+
 
         </style>
     </head>
@@ -110,27 +116,27 @@
                             <div class="row">
                                 <div class="col-xs-2">
                                     <p>Anger</p>
-                                    <svg class="gauge" id="fillgauge1" width="150px" height="150px"></svg>
+                                    <svg class="gauge" id="fillgauge1"></svg>
                                 </div>
 
                                 <div class="col-xs-2 col-half-offset">
                                     <p>Disgust</p>
-                                    <svg class="gauge" id="fillgauge2" width="150px" height="150px"></svg>
+                                    <svg class="gauge" id="fillgauge2"></svg>
                                 </div>
 
                                 <div class="col-xs-2 col-half-offset">
                                     <p>Fear</p>
-                                    <svg class="gauge" id="fillgauge3" width="150px" height="150px"></svg>
+                                    <svg class="gauge" id="fillgauge3"></svg>
                                 </div>
 
                                 <div class="col-xs-2 col-half-offset">
                                     <p>Joy</p>
-                                    <svg class="gauge" id="fillgauge4" width="150px" height="150px"></svg>
+                                    <svg class="gauge" id="fillgauge4"></svg>
                                 </div>
 
                                 <div class="col-xs-2 col-half-offset">
                                     <p>Sadness</p>
-                                    <svg class="gauge" id="fillgauge5" width="150px" height="150px"></svg>
+                                    <svg class="gauge" id="fillgauge5"></svg>
                                 </div>
                             </div>
 
@@ -143,7 +149,7 @@
                                 var fear = (dataDict.fear / total) * 100;
                                 var joy = (dataDict.joy / total) * 100;
                                 var sadness = (dataDict.sadness / total) * 100;
-                                 
+
                                 var config1 = liquidFillGaugeDefaultSettings();
                                 config1.circleColor = "#960c0c"
                                 config1.textColor = "#FFFFFF";
