@@ -27,7 +27,7 @@ def search():
 		toneList = getTones(jsonList)
 		vals = getAvg(toneList)
 		return render_template('search.html', data=json.dumps(vals), name=name)
-	except WatsonException as err:
+	except:
 		return render_template('error.html', name='Error')
 
 @app.route('/about', methods=['GET'])
