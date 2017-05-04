@@ -22,7 +22,10 @@ def search():
 	jsonList = getData(api_inst, twitter_query)
 	toneList = getTones(jsonList)
 	vals = getAvg(toneList)
-	return render_template('search.html', data=json.dumps(vals), name=name)
+	try:
+		return render_template('search.html', data=json.dumps(vals), name=name)
+	except:
+		return render_template('error.html', name='Error')
 
 @app.route('/about', methods=['GET'])
 def about():
