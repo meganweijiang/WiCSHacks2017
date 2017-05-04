@@ -21,10 +21,13 @@ def search():
 	try:
 		api_inst = getInst()
 		jsonList = getData(api_inst, twitter_query)
+	except:
+		return render_template('error.html', name='Error')
+	try:
 		toneList = getTones(jsonList)
 		vals = getAvg(toneList)
 		return render_template('search.html', data=json.dumps(vals), name=name)
-	except:
+	except WatsonException as err:
 		return render_template('error.html', name='Error')
 
 @app.route('/about', methods=['GET'])
