@@ -18,11 +18,11 @@ def hello_world():
 def search():
 	name = "Results"
 	twitter_query = request.args.get('search_query')
-	api_inst = getInst()
-	jsonList = getData(api_inst, twitter_query)
-	toneList = getTones(jsonList)
-	vals = getAvg(toneList)
 	try:
+		api_inst = getInst()
+		jsonList = getData(api_inst, twitter_query)
+		toneList = getTones(jsonList)
+		vals = getAvg(toneList)
 		return render_template('search.html', data=json.dumps(vals), name=name)
 	except:
 		return render_template('error.html', name='Error')
