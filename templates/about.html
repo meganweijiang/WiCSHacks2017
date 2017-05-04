@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
+
         <title>{{ name }}</title>
 
         <!-- FontAwesome (icons) -->
@@ -16,6 +17,10 @@
         <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,100i" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato:300,300i" rel="stylesheet">
 
+        <!-- Icon -->
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+        <!-- D3.js -->
         <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
         <script src="{{ url_for('static', filename='js/liquidFillGauge.js') }}" language="JavaScript"></script>
 
