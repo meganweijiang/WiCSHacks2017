@@ -1,11 +1,12 @@
 import json
 import re
+import os
 from watson_developer_cloud import ToneAnalyzerV3
 from app.gettweets import *
 
 tone_analyzer = ToneAnalyzerV3(
-    username='a82107db-ddfd-4d75-b2a8-6addabe05a47',
-    password='pKJ1lho7jQ2o',
+    username=os.environ.get('IBM_WATSON_USERNAME'),
+    password=os.environ.get('IBM_WATSON_PW'),
     version='2016-02-11')
 
 def getTones(jsonList):
