@@ -1,15 +1,11 @@
 import json
 import tweepy
+import os
 
-#API_KEY = 'ypOZYLGlzL83c8RcG0vkUIJ6Y'
-#API_SECRET = '60V0stdGQf6KYveJ6jpb33y9lFAw2sHYuGa9IZvSCjm70cciSH'
-#TOKEN_KEY = '803397824822083584-0J6i6wpp6KdGqZPIexlAVdGs6MhPNCp'
-#TOKEN_SECRET = 'twwHBypmQrnFPS0JiS3tHvNJUJ5px1LEvgKooYBaHNm9F'
-
-API_KEY = 'HJIj9KVlhARSZFwG7CCSjqwOS'
-API_SECRET = 'JdfdIVeSNLFuazbzSZeKAofdy7s5IzLVpI25RgjOzOuOreONtT'
-TOKEN_KEY = '3243742999-ItaCs47Neu3ve4dTJpcsVz4xvYuJxBSYbrzTRa0'
-TOKEN_SECRET = 'mArLXKMpbWArgRRI8UQqYrbJWbZyQxTXmgaMeh9J19CEm'
+API_KEY = os.environ.get('TWITTER_API_KEY')
+API_SECRET = os.environ.get('TWITTER_API_SECRET')
+TOKEN_KEY = os.environ.get('TWITTER_TOKEN')
+TOKEN_SECRET = os.environ.get('TWITTER_SECRET')
 
 def store(tweet, jsonList):
 	jsonList.append(json.dumps(tweet))
